@@ -7,11 +7,13 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -37,7 +39,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    CertificatingCourse("Android")
+                    CertificatingCourse("Jorge Armando Rodríguez Vera")
                 }
             }
         }
@@ -53,6 +55,30 @@ fun CertificatingCourse(nombre: String, modifier: Modifier = Modifier) {
                 .padding(10.dp),
             verticalArrangement = Arrangement.Center,
         ) {
+            Row(
+                modifier = modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.Center
+            ) {
+
+                Image(
+                    painter = painterResource(id = R.drawable.escudounam_negro)
+                    , contentDescription = null,
+                    modifier = modifier.size(50.dp,50.dp)
+
+                )
+                Text(text = "Departamento de Desarrollo")
+                Image(painter = painterResource(id = R.drawable.escudofi_negro), contentDescription = null,
+                    modifier = modifier.size(50.dp,50.dp)
+                )
+
+            }
+            Spacer(modifier = modifier.height(20.dp))
+            Text(
+                text = "This certicate is presented to:",
+                modifier = modifier.fillMaxWidth(),
+                textAlign = TextAlign.Center
+            )
+
               Box(
                 contentAlignment = Alignment.Center,
                 modifier = modifier
@@ -80,6 +106,52 @@ fun CertificatingCourse(nombre: String, modifier: Modifier = Modifier) {
                     .height(20.dp)
             )
             Text(text = "has successfully completed a 2 hours course on")
+            Text(text = "Android",
+                textAlign = TextAlign.Center,
+                fontSize = 30.sp,
+                modifier = modifier.fillMaxWidth()
+            )
+            Spacer(
+                modifier = modifier
+                    .height(50.dp)
+            )
+
+            Row(
+                modifier =
+                    modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceAround
+            ) {
+                Column (
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ){
+                    Image(painter = painterResource(id = R.drawable.signature_1) ,
+                        contentDescription =  null,
+                        modifier = modifier.
+                    size(50.dp,50.dp))
+                    Text(text = "Julian Álvarez",
+                        fontWeight = FontWeight.Bold,
+                    )
+                    Text(text = "Representatives")
+
+                }
+
+                Column(
+                    horizontalAlignment = Alignment.CenterHorizontally
+
+                ) {
+                    Image(painter = painterResource(id = R.drawable.signature_2) ,
+                        contentDescription =  null,
+                        modifier = modifier.
+                        size(50.dp,50.dp))
+                    Text(text = "Dark Lord",
+                        fontWeight = FontWeight.Bold,
+                    )
+                    Text(text = "Representatives")
+
+
+                }
+            }
+
 
         }
 
