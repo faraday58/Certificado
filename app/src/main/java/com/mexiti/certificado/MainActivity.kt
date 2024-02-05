@@ -53,20 +53,20 @@ fun CertificatingCourse(nombre: String, modifier: Modifier = Modifier) {
                 .padding(10.dp),
             verticalArrangement = Arrangement.Center,
         ) {
-            Box(
+              Box(
                 contentAlignment = Alignment.Center,
                 modifier = modifier
                     .fillMaxWidth()
             )
+
             {
                 Image(
                     painter =
                 painterResource(id = R.drawable.android_fondo) ,
                     contentDescription =null,
                     modifier = modifier.fillMaxWidth(),
-                    alpha = 0.2F
+                    alpha = 0.1F
                 )
-
                 Text(
                     text = nombre,
                     fontSize = 20.sp,
